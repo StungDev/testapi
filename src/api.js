@@ -44,6 +44,12 @@ postRequests.createkey = async function createApiKey(req) {
   return { key: key, success: success, error: error };
 }
 
+const IP = require('ip');
+
+getRequests.ip = async function getIp(req) {
+  return { ip: IP.address() };
+}
+
 async function handleApiCall(req, res, requests) {
   const apiname = req.params[0];
   const request = requests[apiname];
