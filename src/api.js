@@ -36,7 +36,7 @@ function handleApiCall(req, res, requests) {
   }
 }
 
-router.post('/post', jsonParser, (req, res) => {
+router.get('/get', jsonParser, (req, res) => {
   // callApi(req, res, getRequests, req.query);
   // console.log(req)
 
