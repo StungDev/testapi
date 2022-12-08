@@ -16,6 +16,7 @@ let keys = [];
 // using supabase
 
 const { createClient } = require('@supabase/supabase-js');
+const { query } = require('express');
 const supabaseUrl = 'https://doiqfbtwvxcdxfmcbgfn.supabase.co'
 const supabase = createClient(supabaseUrl, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRvaXFmYnR3dnhjZHhmbWNiZ2ZuIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3MDE4NDI4NiwiZXhwIjoxOTg1NzYwMjg2fQ.sfYPXy7nLlfQjD8rdOE1pm94xZW2R3dyLOzisFC12NU')
 
@@ -24,21 +25,27 @@ getRequests.key = async function getApiKey(req) {
   const { user } = req.query;
   const { data, error } = await supabase
     .from('keys')
-    .select('key')
-    .eq('user', user)
+    .select('user, key')
+    .eq('user', parseInt(user))
   const success = data ? true : false;
-  return { key: data, success: success };
+  const { key } = data[0]
+  console.log(typeof(user))
+  console.log(data)
+  console.log(error)
+  return { key: key, success: success };
 }
 //create key in supabase
 postRequests.createkey = async function createApiKey(req) {
   const { user } = req.body;
+  console.log(user)
   const { data, error } = await supabase
     .from('keys')
     .insert([
-      { user: user, key: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) },
+      { user: parseInt(user), key: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) }
     ])
-  const success = data ? true : false;
-  return { key: data, success: success };
+  console.log(error)
+  const success = error ? false : true;
+  return { error: error, success: success };
 }
 
 //get user key
@@ -81,7 +88,7 @@ router.post('/post/*', jsonParser, (req, res) => {
   handleApiCall(req, res, postRequests);
 });
 
-app.use('/api', router);
+app.use('/.netlify/functions/api', router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
