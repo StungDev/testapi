@@ -60,7 +60,7 @@ router.post('/post/*', jsonParser, (req, res) => {
   handleApiCall(req, res, postRequests);
 });
 
-app.use('/.netlify/functions/api', router);
+app.use('/api', router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
