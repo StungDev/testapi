@@ -34,11 +34,11 @@ postRequests.createkey = async function createApiKey(req) {
 }
 //handles all api calls
 
-function handleApiCall(req, res, requests) {
+async function handleApiCall(req, res, requests) {
   const apiname = req.params[0];
   const request = requests[apiname];
   if (request) {
-    res.json(request(req));
+    res.json(await request(req));
   } else {
     res.status(404).send('Not found');
   }
