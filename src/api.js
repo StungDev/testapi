@@ -21,11 +21,11 @@ const supabase = createClient(supabaseUrl, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
 
 //get key from supabase
 getRequests.key = async function getApiKey(req) {
-  const { user } = req.query;
+  const { ip } = req.query;
   const { data, error } = await supabase
     .from('keys')
-    .select('user, key')
-    .eq('user', parseInt(user))
+    .select('ip, key')
+    .eq('ip', ip)
   const { key } = data[0]
   const success = data ? true : false;
   return { key: key, success: success, error: error };
@@ -33,13 +33,13 @@ getRequests.key = async function getApiKey(req) {
 //create key in supabase
 
 postRequests.createkey = async function createApiKey(req) {
-  const { user } = JSON.parse(req.body.toString());
-  console.log(user)
+  const { ip } = JSON.parse(req.body.toString());
+  console.log(ip)
   const key = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   const { data, error } = await supabase
     .from('keys')
     .insert([
-      { user: parseInt(user), key: key }
+      { ip: ip, key: key }
     ])
   const success = error ? false : true;
   return { key: key, success: success, error: error };
@@ -54,7 +54,7 @@ getRequests.ip = async function getIp(req) {
   }
 }
 
-//gets the ip of the user
+//gets the ip of the ip
 
 
 async function handleApiCall(req, res, requests) {
