@@ -44,10 +44,10 @@ function handleApiCall(req, res, requests) {
   }
 }
 
-router.get('/get', (req, res) => {
+router.get('/get/*', (req, res) => {
   handleApiCall(req, res, getRequests);
 });
-router.post('/post', jsonParser, (req, res) => {
+router.post('/post/*', jsonParser, (req, res) => {
   handleApiCall(req, res, postRequests);
 });
 
