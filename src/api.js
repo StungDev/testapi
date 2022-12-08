@@ -31,8 +31,10 @@ getRequests.key = async function getApiKey(req) {
   return { key: key, success: success, error: error };
 }
 //create key in supabase
+
 postRequests.createkey = async function createApiKey(req) {
-  const { user } = req.body;
+  const { user } = JSON.parse(req.body.toString());
+  console.log(user)
   const key = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   const { data, error } = await supabase
     .from('keys')
@@ -42,8 +44,6 @@ postRequests.createkey = async function createApiKey(req) {
   const success = error ? false : true;
   return { key: key, success: success, error: error };
 }
-
-var requestIp = require('request-ip');
 
 getRequests.ip = async function getIp(req) {
   const robloxInfo = JSON.parse(req.headers['roblox-session-id']);
