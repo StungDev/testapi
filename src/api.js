@@ -24,12 +24,23 @@ async function callApi(req, res, requests, query) {
   }
 }
   
+//handles all api calls
+
+function handleApiCall(req, res, requests) {
+  const { id } = req.params;
+  const request = requests[id];
+  if (request) {
+    res.json(request);
+  } else {
+    res.status(404).send('Not found');
+  }
+}
 
 router.post('/post', jsonParser, (req, res) => {
   // callApi(req, res, getRequests, req.query);
   // console.log(req)
 
-  res.json({body: req.body})
+  res.json({req: req})
 });
 
 app.use('/.netlify/functions/api', router);
