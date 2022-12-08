@@ -26,8 +26,10 @@ async function callApi(req, res, requests, query) {
   
 
 router.get('/get', jsonParser, (req, res) => {
-  callApi(req, res, getRequests, req.query);
-  console.log(req)
+  // callApi(req, res, getRequests, req.query);
+  // console.log(req)
+
+  res.json({message: 'hello world'})
 });
 
 app.use('/.netlify/functions/api', router);
