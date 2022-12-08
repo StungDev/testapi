@@ -16,7 +16,6 @@ let keys = [];
 // using supabase
 
 const { createClient } = require('@supabase/supabase-js');
-const { query } = require('express');
 const supabaseUrl = 'https://doiqfbtwvxcdxfmcbgfn.supabase.co'
 const supabase = createClient(supabaseUrl, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRvaXFmYnR3dnhjZHhmbWNiZ2ZuIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3MDE4NDI4NiwiZXhwIjoxOTg1NzYwMjg2fQ.sfYPXy7nLlfQjD8rdOE1pm94xZW2R3dyLOzisFC12NU')
 
@@ -44,11 +43,19 @@ postRequests.createkey = async function createApiKey(req) {
   return { key: key, success: success, error: error };
 }
 
-const IP = require('ip');
+var requestIp = require('request-ip');
 
 getRequests.ip = async function getIp(req) {
-  return { ip: IP.address() };
+  const robloxInfo = JSON.parse(req.headers['roblox-session-id']);
+  if (robloxInfo) {
+    return { ip: robloxInfo.ClientIpAddress, Latitude: robloxInfo.Latitude, Longitude: robloxInfo.Longitude };
+  }else{
+    return { ip: "isnt roblox" };
+  }
 }
+
+//gets the ip of the user
+
 
 async function handleApiCall(req, res, requests) {
   const apiname = req.params[0];
