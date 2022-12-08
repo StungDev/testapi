@@ -27,20 +27,21 @@ getRequests.key = async function getApiKey(req) {
     .from('keys')
     .select('user, key')
     .eq('user', parseInt(user))
-  const success = data ? true : false;
   const { key } = data[0]
-  return { key: key, success: success };
+  const success = data ? true : false;
+  return { key: key, success: success, error: error };
 }
 //create key in supabase
 postRequests.createkey = async function createApiKey(req) {
   const { user } = req.body;
+  const key = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   const { data, error } = await supabase
     .from('keys')
     .insert([
-      { user: parseInt(user), key: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) }
+      { user: parseInt(user), key: key }
     ])
   const success = error ? false : true;
-  return { error: error, success: success };
+  return { key: key, success: success, error: error };
 }
 
 async function handleApiCall(req, res, requests) {
@@ -60,7 +61,7 @@ router.post('/post/*', jsonParser, (req, res) => {
   handleApiCall(req, res, postRequests);
 });
 
-app.use('/', router);
+app.use('/api', router);
 
 module.exports = app;
 module.exports.handler = serverless(app);

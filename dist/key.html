@@ -111,12 +111,7 @@
                   var id = a.split("#")[1]
                   while (id == "undefined"){
                   }
-                  var http = new XMLHttpRequest()
-                  http.onreadystatechange = function() { 
-                      if (http.readyState == 4 && http.status == 200)
-                        var key = http.responseText
-                        document.getElementById('key').innerHTML = key
-                  }
+                  document.getElementById('key').innerHTML = id
                   console.log(id)
                   http.open("GET", "https://raw.githubusercontent.com/StungDev/Keys/main/keyfor_"+id+".txt", true)
                   http.send(null)
