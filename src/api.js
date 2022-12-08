@@ -12,7 +12,7 @@ const postRequests = {};
 
 let keys = [];
 //get user key
-getRequests.getkey = async function getApiKey(req) {
+getRequests.userinfo = async function getApiKey(req) {
   const { user } = req.query;
   const key = keys.find((key) => key.user === user);
   const success = key ? true : false;
@@ -51,7 +51,7 @@ router.post('/post/*', jsonParser, (req, res) => {
   handleApiCall(req, res, postRequests);
 });
 
-app.use('/.netlify/functions/api', router);
+app.use('/api', router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
