@@ -60,7 +60,7 @@ router.post('/post/*', jsonParser, (req, res) => {
   handleApiCall(req, res, postRequests);
 });
 
-app.use('/api', router);
+app.use('/', router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
