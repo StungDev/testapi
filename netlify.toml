@@ -7,7 +7,7 @@
     status = 200
 
 [[redirects]]
-    from = "/linkvertise"
-    to = "https://www.linkvertise.com"
+    from = "/linkvertise/*"
+    to = "https://link-to.net/551092/:splat"
     status = 200
     force = true
