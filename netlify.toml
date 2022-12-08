@@ -6,6 +6,7 @@
     to = "/.netlify/functions/api/:splat"
     status = 200
 
+[[redirects]]
     from = "/linkvertise/*"
     to = "https://linkvertise.com/75631/RGBInvGUI/1"
     status = 200
