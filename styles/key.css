@@ -1,0 +1,265 @@
+.key-container {
+    /* min-height: 100vh; */
+  }
+  .key-key {
+    /* width: 100%; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    background-color: rgba(8, 11, 42, 1);
+  }
+  .key-ellipse60 {
+    position: absolute;
+    width: 18.541666666666668vw;
+    height: 32.96296296296296vh;
+    top: -2.314814814814815vh;
+    left: -0.3125vw;
+    
+    background: #2A3E84;
+    filter: blur(9.114583333333332vw);
+  }
+  .key-ellipse69 {
+    position: absolute;
+    width: 20.729166666666668vw;
+    height: 36.851851851851855vh;
+    top: 21.75925925925926vh;
+    left: 61.66666666666667vw;
+    
+    background: #192065;
+    filter: blur(9.114583333333332vw);
+  }
+  .key-ellipse59 {
+    width: 18.541666666666668vw;
+    height: 32.96296296296296vh;
+    top: -3.3333333333333335vh;
+    left: 79.42708333333334vw;
+    position: absolute;
+    border-color: transparent;
+  
+    background: #2A3E84;
+    filter: blur(9.114583333333332vw);
+  }
+  .key-star2 {
+    width: 0.78125vw;
+    height: 1.574074074074074vh;
+    top: 14.166666666666666vh;
+    left: 46.029462814331055vw;
+    position: absolute;
+  }
+  .key-star9 {
+    width: 0.78125vw;
+    height: 1.574074074074074vh;
+    top: 15.37037037037037vh;
+    left: 66.08154932657878vw;
+    position: absolute;
+  }
+  .key-star5 {
+    width: 1.0416666666666665vw;
+    height: 2.037037037037037vh;
+    top: 51.11883092809606vh;
+    left: 2.930714686711629vw;
+    position: absolute;
+  }
+  .key-star4 {
+    width: 0.9895833333333333vw;
+    height: 2.037037037037037vh;
+    top: 19.074074074074073vh;
+    left: 17.14043617248535vw;
+    position: absolute;
+  }
+  .key-star7 {
+    width: 1.875vw;
+    height: 3.7962962962962963vh;
+    top: 14.814814814814813vh;
+    left: 96.71979268391927vw;
+    position: absolute;
+  }
+  .key-star10 {
+    width: 1.9270833333333335vw;
+    height: 3.981481481481482vh;
+    top: 84.20206705729166vh;
+    left: 89.55041249593098vw;
+    position: absolute;
+  }
+  .key-star11 {
+    width: 0.78125vw;
+    height: 1.574074074074074vh;
+    top: 79.91893627025462vh;
+    left: 73.54228973388672vw;
+    position: absolute;
+  }
+  .key-star8 {
+    width: 0.625vw;
+    height: 1.2037037037037037vh;
+    top: 66.26650774920428vh;
+    left: 62.40699768066407vw;
+    position: absolute;
+  }
+  .key-vector29 {
+    position: absolute;
+    width: 35.59114456176758vw;
+    height: 106.46944399233217vh;
+    top: -27.240741871021413vh;
+    left: 74.54166412353516vw;
+  }
+  .key-ellipse72 {
+    position: absolute;
+    width: 18.541666666666668vw;
+    height: 32.96296296296296vh;
+    top: 81.66666666666667vh;
+    left: 76.51041666666667vw;
+    
+    background: #2A3E84;
+    filter: blur(9.114583333333332vw);
+  }
+  .key-group1261152703 {
+    top: 37.5vh;
+    left: 35.9375vw;
+    width: 27.604166666666668vw;
+    height: 25vh;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .key-rectangle9381 {
+    top: 2.1296310424804688vh;
+    left: 1.0416666666666665vw;
+    width: 26.5625vw;
+    height: 20.74074074074074vh;
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0.052083333333333336vw;
+    border-radius: 0.4166666666666667vw;
+  
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.7407407407407408vh;
+  }
+  .key-frame1261152775 {
+    top: 0px;
+    left: -0.6770833333333334vw;
+    width: 10.416666666666668vw;
+    height: 25vh;
+    position: absolute;
+  
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  .key-frame1261152774 {
+    top: 4.2592606721100985vh;
+    left: 2.34375vw;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    border-color: transparent;
+    flex-direction: column;
+  }
+  .key-text {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    font-size: 1.8518518518518516vh;
+    align-self: auto;
+    font-style: Regular;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 2.7777777777777777vh;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 1.4814814814814816vh;
+    text-decoration: none;
+  }
+  .key-frame1261152768 {
+    width: 23.958333333333336vw;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    flex-direction: column;
+  }
+  .key-text2 {
+    color: rgba(255, 255, 255, 1);
+    width: 23.958333333333336vw;
+    height: auto;
+    font-size: 2.9629629629629632vh;
+    align-self: auto;
+    font-style: Bold;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 2.9629629629629632vh;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 1.4814814814814816vh;
+    text-decoration: none;
+  }
+  .key-text4 {
+    color: rgba(180, 196, 202, 1);
+    height: auto;
+    font-size: 1.4814814814814816vh;
+    align-self: stretch;
+    font-style: Regular;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 2.2222222222222223vh;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .key-star14 {
+    width: 0.9895833333333333vw;
+    height: 2.037037037037037vh;
+    top: 93.55455186631944vh;
+    left: 37.525812784830734vw;
+    position: absolute;
+  }
+  .key-star12 {
+    width: 1.9270833333333335vw;
+    height: 3.981481481481482vh;
+    top: 91.38888888888889vh;
+    left: 92.69285202026367vw;
+    position: absolute;
+  }
+  
+  * {
+    /* -webkit-user-select: none;
+    -ms-user-select: none; */
+    user-select: none;
+    pointer-events: none;
+  }
+  
+  .select {
+    user-select: text;
+    pointer-events: all;
+  }
+  
+  .discord {
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    top: 0;
+    right: 0;
+    pointer-events: all;
+  }
