@@ -29,47 +29,19 @@ getRequests.key = async function getApiKey(req) {
     .eq('user', parseInt(user))
   const success = data ? true : false;
   const { key } = data[0]
-  console.log(typeof(user))
-  console.log(data)
-  console.log(error)
   return { key: key, success: success };
 }
 //create key in supabase
 postRequests.createkey = async function createApiKey(req) {
   const { user } = req.body;
-  console.log(user)
   const { data, error } = await supabase
     .from('keys')
     .insert([
       { user: parseInt(user), key: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) }
     ])
-  console.log(error)
   const success = error ? false : true;
   return { error: error, success: success };
 }
-
-//get user key
-// getRequests.userinfo = async function getApiKey(req) {
-//   const { user } = req.query;
-//   const key = keys.find((key) => key.user === user);
-//   const success = key ? true : false;
-//   return { userinfo: key, success: success };
-// }
-// //create user key
-// postRequests.createkey = async function createApiKey(req) {
-//   const { user } = req.body;
-//   const key = keys.find((key) => key.user === user);
-//   if (key) {
-//     return { success: false, message: 'User already exists' };
-//   }
-//   const newKey = {
-//     user: user,
-//     key: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
-//   };
-//   keys.push(newKey);
-//   return { success: true, userinfo: newKey };
-// }
-//handles all api calls
 
 async function handleApiCall(req, res, requests) {
   const apiname = req.params[0];
