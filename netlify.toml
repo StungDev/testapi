@@ -7,6 +7,7 @@
     status = 200
 
 [[redirects]]
-    from = "/linkvertise/*"
-    to = "https://linkvertise.com/75631/RGBInvGUI/1"
+    from = "/linkvertise"
+    to = "https://www.linkvertise.com"
     status = 200
+    force = true
